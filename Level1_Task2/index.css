@@ -1,0 +1,326 @@
+*{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+    font-family: mySource;
+}
+
+@font-face{
+    font-family: mySource;
+    src:url(Hey\ Comic.otf);
+    font-weight: 900;
+}
+section{
+    background:linear-gradient(to bottom right,#f33b69, #FED9B7);
+    background-attachment: fixed;
+    overflow-x: hidden; 
+    overflow-y: visible;  
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+}
+#navbar{
+    padding-top: 50px;
+    padding-right:70px;
+    padding-left: 70px;
+    height: 100px;
+    overflow-y: visible;
+    filter: drop-shadow(5px 5px 5px rgba(8, 0, 0, 0.699));
+    font-size: 19px;
+}
+#logo{
+    position: relative;
+    bottom: 30px;
+    height: 100px;  
+}
+#navmenu{
+    list-style: none;
+    display: inline-flex;
+    float: right;
+}
+#navmenu a{
+    text-decoration: none;
+    padding-right: 30px;
+    color: black;
+}
+#navmenu a .active{
+    color: rgba(240, 0, 0, 0.671);
+}
+#navmenu a:hover{
+    color: rgba(0, 0, 0, 0.671);
+}
+#theme{
+    padding-left: 40%;
+    padding-right: 50%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    display: inline-flex;
+    height: 65px;
+}
+.color{
+    border: 0px;
+    height: 40px;
+    width: 40px;
+    margin-right: 20px;
+    border-radius: 15%;
+}
+#theme #color1{
+    background:linear-gradient(to bottom right,#f33b69, #FED9B7);
+    box-shadow: inset -5px -5px 8px rgba(244, 10, 57, 0.432),inset 5px 5px 8px #f6f6f669;
+}
+#theme #color2{
+    background:linear-gradient(to bottom right,#00b972,#fed9b7);
+    box-shadow: inset -5px -5px 8px #015535,inset 5px 5px 8px #f6f6f694;
+}
+#theme #color3{
+    background:linear-gradient(to bottom right,#014d64,#64f1f8);
+    box-shadow: inset -5px -5px 8px #013747,inset 5px 5px 8px #f6f6f669;
+}
+.color:hover{
+    transform: scale(1.2);
+    cursor: pointer;
+}
+#box{
+    padding-top: 20px;
+    display: inline-flex;
+    position: relative;
+    left: 20%;
+    width: 800px;
+    height: 400px;
+}
+#container{
+    position: relative;
+    width: 700px;
+    height: 400px;
+    background:linear-gradient(to bottom right,#f33b69, #FED9B7);
+    display: inline-flex;
+    overflow: visible;
+    border-radius: 20px;
+    box-shadow: inset -8px -8px 8px rgba(244, 10, 57, 0.432),inset 8px 8px 8px #f6f6f669;
+}  
+#container #girlImage{
+    bottom: 40px;
+    position: relative;
+    height: 480px;
+    left: 20px;
+    filter: drop-shadow(3px 0px 9px rgba(0, 0, 0, 0.63));
+    --f: .12; 
+    --_f: calc(100%*var(--f)/(1 + var(--f)));
+    width: 275px;
+    aspect-ratio: calc(1 + var(--f));
+    object-fit: contain;
+    transition: .5s;
+    animation: swing infinite 5s;
+}
+
+@keyframes swing{
+    0%{
+        transform: translateY(calc(-1*var(--_f))); 
+    }
+    40%{
+    transform: translateX(calc(-1*var(--_f))); 
+    }
+    60%{ 
+        transform: translateY(calc(-1*var(--_f))); 
+    }
+    80%{
+        transform: translateX(calc(1*var(--_f))); 
+    }
+    100%{
+        transform: translateY(calc(-1*var(--_f))); 
+   }
+ } 
+#container .textbox{
+    position: relative;
+    padding: 20px;
+    overflow-y: hidden;
+    overflow-x: hidden;
+    text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.404);
+    cursor: default;
+    margin-right: 25px;
+}
+#container .textbox h1{
+    letter-spacing: 5px;
+    text-align: center;
+    padding-bottom: 20px;
+    font-size: 2em;
+}
+
+#container .textbox p{
+    font-weight: 400;
+    text-align: center;
+    padding-bottom: 20px;
+    font-size: 16px;
+    line-height: 27px;
+    color: rgba(0, 10, 10, 0.692);  
+    animation: letterspace linear 2s;
+}
+@keyframes letterspace{
+    
+    50%{ letter-spacing: 7px;}
+    0%{ letter-spacing: 100px;}
+    
+}
+#tag{
+    margin-left: 10px;
+    width: 40px;
+    padding-top: 10px;
+    display: flexbox;
+}
+#tag div{
+    height: 20px;
+    width: 20px;
+    margin-top: 2px;
+    padding: 10%;
+    background-color: rgba(240, 6, 6, 0.938);
+    cursor: default;
+    border-radius: 5px;
+    text-align: center;
+    font-size: .7em;
+    justify-content: center;
+    filter: drop-shadow(2px 2px 5px black);
+}
+#tag #odd{
+    animation: odd infinite .3s;
+}
+@keyframes odd{
+    50%{ transform: translateX(2px);} 
+}
+#tag #even{
+    animation: even infinite .5s;
+}
+#rotatebox{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: visible;
+    height: 400px;
+    width: 500px;
+}
+.skillbox{
+    position: relative;
+    width: 100px;
+    height: 100px;
+    transform-style: preserve-3d;
+    animation: rotate 15s linear infinite;
+}
+@keyframes rotate{
+    0%{
+        transform: perspective(1000px) rotateY(0deg);
+    }
+    100%{
+        transform: perspective(1000px) rotateY(360deg);
+    }
+}
+.skillbox div{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    padding: 25px;
+    padding-top: 35px;
+    border-radius: 15px;
+    box-shadow: inset -3px -3px 5px rgba(247, 4, 53, 0.432),inset 3px 3px 5px #f6f6f688;
+    transform-origin: center;
+    text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.384);
+    background:linear-gradient(to bottom left,#f00e47, #f7b77c);
+    transform-style: preserve-3d;
+    text-align: center;
+    justify-content: center;
+    transform: rotateY(calc(var(--i)*45deg)) translateZ(150px);
+    transition: 2s;
+}
+
+.skillbox div:hover{
+    cursor: pointer;
+    transform: translateY(-50px) scale(2);
+
+}
+.creation{
+    padding: 20px;
+    margin-top: 20px;
+    bottom: 20px;
+    position: relative;
+    height: 100%;
+    width: 400px;
+    display: grid;
+    grid-auto-flow: column;
+    scroll-behavior: column;
+    gap: 1.2rem;
+    overflow-y: auto;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+}
+.creation::-webkit-scrollbar{
+    display: none;
+}
+.creation a{
+    text-decoration: none;
+}
+.creation h2{
+    font-family: 'Courier New', Courier, monospace;
+    color: black;
+    justify-content: center;
+    text-align: center;
+    font-size: 1em;
+    letter-spacing: 1px;
+    padding-top: 10px;
+    text-shadow: 2px 2px 5px rgb(0, 0, 0);
+}
+.creation a img{
+    scroll-snap-align: start;
+    height: 200px;
+    width: 150px;
+    position: relative;
+    margin-bottom: 12px;
+    top: 10px;
+    left: 20px;
+    justify-content: center;
+    align-items: center;
+    filter: drop-shadow(0px 0px 5px rgba(0, 0, 0, 0.658));
+}
+.creation #creation5{
+    width: 200px;
+    left: 5px;
+    position: relative;
+}
+.creation div{
+    height: 180px;
+    overflow-x: visible;
+    background:linear-gradient(to bottom left,#f00e47, #f7b77c);
+    border-radius: 5px;
+    margin-left: 30px;
+    top: 50px;
+    padding-top: 10px;
+    width: 180px;
+    position: relative;
+    box-shadow: inset -5px -5px 5px rgba(247, 4, 53, 0.432),inset 5px 5px 8px #f6f6f656;
+}
+.creation a:hover img{
+    transform: scale(1.1);
+    z-index: 1000;
+    animation: blink 2s infinite;
+}
+@keyframes blink{
+    50%{ filter: drop-shadow(5px 5px 5px rgb(158, 3, 34));}
+}
+#contact{
+    padding-left: 25%;
+    padding-top: 10%;
+    display: flex;
+    flex-direction: column;
+    height: 350px;
+    width: 350px;
+}
+#contact #contactLink{
+    margin-bottom: 20px;
+    height: 70px;
+    position: relative;
+    box-shadow: inset -3px -3px 5px rgba(247, 4, 53, 0.432),inset 3px 3px 5px #f6f6f688;
+    padding: 7%;
+    border-radius: 10px;
+}
+#contact #contactLink:hover{
+    transform: scale(1.1);   
+}
+
